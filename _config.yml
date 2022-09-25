@@ -24,7 +24,7 @@ url: https://sciencesam.github.io  # the base hostname and protocol for your sit
 title: Sam Stone
 email: sam@samstone.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal Website for Sam Stone
+  
 github_username:  sciencesam
 linkedin_username: samuel-stone-a28508118
 # Build settings
@@ -34,6 +34,7 @@ plugins:
 
 include:
   - "_img"
+  - "_files"
 
 show_excerpts: true
 excerpt_separator: <!-- excerpt-end -->
