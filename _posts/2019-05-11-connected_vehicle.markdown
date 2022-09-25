@@ -2,7 +2,7 @@
 layout: post
 title:  "2019 SAE Connected Vehicle Challenge"
 date:   2019-05-11 14:11:01 -0500
-categories: news
+tags: dsp ml automotive sensors challenge
 ---
 We won the 2019 SAE Connected vehicle Challenge!
 
