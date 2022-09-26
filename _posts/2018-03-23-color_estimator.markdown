@@ -3,6 +3,7 @@ layout: post
 title:  "Color Based Musical Instrument"
 date:   2018-03-23 14:11:01 -0500
 tags: dsp paper sensors conference
+categories: grok
 ---
 I presented my paper "The Development of a Color-based Musical Instrument" at the 2018 IEEE R1 Student Conference.
 <!-- excerpt-end -->
@@ -14,7 +15,7 @@ The [conference](https://site.ieee.org/r1-sac/r1-student-conference/r1-student-c
 
 *Figure 1 Color Image with Saturation thresholds*
 
-Pictures of the surface are taken with a RaspberryPi cameras enclosed in a shrowd. The shrowd lights the surface and allows you to select what part of the surface to sample. 
+Pictures of the surface are taken with a Raspberry Pi cameras enclosed in a shrowd. The shrowd lights the surface and allows you to select what part of the surface to sample. 
 
 ![HSV Color Space](/_img/hsv_color_space.png)
 
@@ -32,5 +33,11 @@ By only capturing pixels where the saturation is above a certain threshold, we c
 
 *Figure 4 88 Key MLE*
 
-We use the [Von Mises distribution](https://en.wikipedia.org/wiki/Von_Mises_distribution) to derive our maximum likelihood estimator. Von Mises is a circular normal distribution. The possible colors are broken up into 88 discrete tones, based on the 88 tones on a piano, and MLE is used to estimate which tone to assign the sample. 
+We use the [Von Mises distribution](https://en.wikipedia.org/wiki/Von_Mises_distribution) to derive our maximum likelihood estimator. 
+
+$$
+f(x|\mu,k) = \frac{e^{cos(x-\mu)}}{2\pi I_0(k)}
+$$
+
+Von Mises is a circular normal distribution. The possible colors are broken up into 88 discrete tones, based on the 88 tones on a piano, and MLE is used to estimate which tone to assign the sample. 
 

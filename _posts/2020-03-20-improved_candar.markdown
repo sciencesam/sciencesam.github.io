@@ -3,6 +3,7 @@ layout: post
 title:  "Improved Coffee Can Radar concept"
 date:   2020-03-20 14:11:01 -0500
 tags: dsp radar challenge paper
+categories: grok
 ---
 Concept I developed for improvements to the MIT Coffee Can Radar, adding angle-of-arrival
 <!-- excerpt-end -->

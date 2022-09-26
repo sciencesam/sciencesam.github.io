@@ -3,7 +3,8 @@ layout: post
 title:  "Binghamton University Rover Feature"
 date:   2018-05-17 14:11:01 -0500
 tags: robotics challenge
-feature_img: _img/rover.png
+feature_img: /_img/rover.png
+categories: news
 ---
 Several news articles recently featured our Mars Rover "BURT"
 

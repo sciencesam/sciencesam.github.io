@@ -3,6 +3,7 @@ layout: post
 title:  "2020 IEEE Radar Challenge"
 date:   2020-03-20 14:11:01 -0500
 tags: dsp radar challenge paper
+categories: news
 ---
 Three concept papers I co-authored were accepted to the 2020 IEEE Radar Challenge.
 

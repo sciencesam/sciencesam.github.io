@@ -4,6 +4,7 @@ title:  "Passive Pothole Patrollers"
 date:   2020-01-01 14:11:01 -0500
 tags: dsp ml automotive sensors paper
 feature_img: /_img/pothole.PNG
+categories: news
 ---
 My article on Connected, Autonomous vehicles was published in IEEE Potentials Magazine
 <!-- excerpt-end -->

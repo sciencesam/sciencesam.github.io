@@ -3,6 +3,7 @@ layout: post
 title:  "TI mmWave Radar"
 date:   2020-03-20 14:11:01 -0500
 tags: dsp radar challenge paper
+categories: grok
 ---
 Concept I developed for with our team at SRC, using an automotive radar as a teaching aid
 <!-- excerpt-end -->

@@ -3,6 +3,7 @@ layout: post
 title:  "RTL-SDR X Band Radar"
 date:   2020-03-20 14:11:01 -0500
 tags: dsp radar challenge paper
+categories: grok
 ---
 Concept I developed for using an RTL-SDR combined with a TV Downconverter to make an cooprative radar. 
 <!-- excerpt-end -->

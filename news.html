@@ -1,24 +1,15 @@
 ---
-layout: default
+layout: page
+permalink: /news
+title: News
 ---
 
-<div class="home">
-  {% comment %}
-
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-{% endcomment %}
-
-<h1> Groking Signal Processing</h1>
-<p>Some articles I've written explaining things</p>
+<p>Posts about things I do and when I am in the news</p>
 <hr>
-  {{ content }}
-
   {% if site.paginate %}
-    {% assign posts = paginator.categories.grok %}
+    {% assign posts = paginator.categories.news %}
   {% else %}
-    {% assign posts = site.categories.grok %}
+    {% assign posts = site.categories.news %}
   {% endif %}
 
   {%- if posts.size > 0 -%}
@@ -67,5 +58,3 @@ layout: default
     {%- endif %}
 
   {%- endif -%}
-
-</div>
