@@ -26,7 +26,7 @@ email: sam@samstone.org
 description: >- # this means to ignore newlines until "baseurl:"
   
 github_username:  sciencesam
-linkedin_username: samuel-stone-a28508118
+linkedin_username: sam-stone-a28508118
 # Build settings
 theme: minima
 plugins:
