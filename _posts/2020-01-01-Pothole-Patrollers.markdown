@@ -7,6 +7,7 @@ feature_img: /_img/pothole.PNG
 categories: news
 ---
 My article on Connected, Autonomous vehicles was published in IEEE Potentials Magazine
+
 <!-- excerpt-end -->
 
 ![Pothole](/_img/pothole.PNG)
