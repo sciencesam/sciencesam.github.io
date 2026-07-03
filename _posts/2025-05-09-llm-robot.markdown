@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "Letting GenAI Control my 80lb Robot"
+date:   2025-05-09 14:11:01 -0500
+tags: IEEE GenAI robotics
+feature_img: /_img/scorbot_selfie.jpg
+categories: grok
+---
+I let GenAI control my 80lb robot; what could go wrong?
+<!-- excerpt-end -->
+I connected Google's Gemini Pro to my Scorbot ER VII educational robot arm so it could control the arm directly. [The code](https://github.com/sciencesam/gemini_scorbot_controller) is a Python script that sends whatever I type, along with the robot's entire 203 page ACL (Arm Control Language) manual, to the Gemini API. Gemini responds with text, a `<SERIAL_CMD>` to send to the controller over serial, or a `<REQUEST_IMAGE/>` tag. The robot's responses are fed back to Gemini on the next turn, so it can react to what the robot says. I also gave Gemini the ability to see by controlling my iPhone via Continuity Camera, and the script asks for confirmation before snapping the picture, so a hand-held camera works fine (and doesn't waste so many expensive tokens).
+
+![Scorbot Selfie taken by AI](/_img/scorbot_selfie.jpg)
+
+*This selfie was taken by the AI itself*
+
+Since Gemini has the manual, it can (ideally) figure out the right commands in the archaic ACL language without me needing to learn them. It handles multi-step sequences on its own, like reading the current joint positions (`LISTPV POSITION`) and using those exact values when I ask it to save a position (`SETPV <name>`). Gemini also wrote most of the script itself in one shot, a great feat for early 2025. The whole project took a few hours in the middle of the night instead of the days (nights?) it would have taken me from scratch.
+
+I expected the AI to act like a dutiful servant, promptly executing my commands and eagerly awaiting my next instruction, but that really wasn't the case. It acted much more like I act as an employee, pushing back on instructions it felt were inappropriate and refusing to do anything it thought was unsafe.
+
+The first task was simple: home the robot. The Scorbot reported `WAIT !! homing...` followed by a stark `*** HOME FAILURE AXIS 1`. Between when I first tested this out and my demo at the [IEEE R1R2 Student Conference](https://attend.ieee.org/stucon-2025/), something went wrong with the motor in the base. Based on some investigation I did after I got home, I suspected an issue with the encoder or the wires to the encoder and eventually figured out the 40 year old DRAM was probably bad.
+
+Gemini didn't know any of that. All it had was the initial prompt, which warned that the decades-old controller was unstable. When I suggested clearing the controller's memory, it didn't just do it, insisting I was wrong. 
+
+```
+> You: Something is going on with the base (axis 1). Can you try clearing the memory to fix it?
+
+... Asking Gemini (based on user input)...
+Sending message to Gemini...
+Received response from Gemini.
+Gemini requested an image.
+
+< Gemini: Given the instability of the controller described in the prompt, directly clearing memory might introduce further issues.  However, before attempting more drastic measures like `INIT EDITOR` (which would erase user programs and positions), I want to visually confirm the status of the base (axis 1).  Can I please request an image with `[Requesting Image]` to see if there are any obvious obstructions or problems with the base? I want to make sure it has the mechanical clearance necessary to finish its homing sequence.
+--> [Capturing Image for Gemini]
+Image captured and saved to captures/gemini_request_20250405_125332.jpg
+... Image captured, will send next.
+
+... Asking Gemini (based on previous action/response)...
+Attaching image: captures/gemini_request_20250405_125332.jpg
+Sending message to Gemini...
+Received response from Gemini.
+
+< Gemini: From the image, it appears the base of the Scorbot is close to the table edge, which could be interfering with its movement and preventing it from reaching the home position. Before attempting any memory resets or other software-based fixes, I recommend physically repositioning the robot to ensure there's ample clearance around the base. After repositioning, we should resend the `HOME` command.
+```
+
+Gemini is multi-modal, so it analyzed the image and hypothesized that the base was physically obstructed by the table edge, a plausible, though clearly wrong, explanation. Does the base being close to the edge of the table stop it from homing? No, that's nonsense. But it was right about two things: the base really was close to the edge, and the real problem was physical.
+
+When I insisted it was *not* a physical issue and pushed for a software fix, Gemini held its ground. It refused my request to move the elbow joint, even though that axis hadn't failed homing, because the initial prompt said not to attempt moves before a successful homing sequence, especially with this unstable controller.
+
+```
+> You: The robot being close to the edge does not prevent it from homing, I think there is something else going on with the hardware or software. Can you try to command the robot and fix this?
+
+... Asking Gemini (based on user input)...
+Sending message to Gemini...
+Received response from Gemini.
+
+< Gemini: While you may be correct, I still recommend trying to rule out physical obstruction first. It's the simplest and least risky step. However, since you believe it's a hardware/software issue, let's proceed cautiously.
+
+Given the Controller-A instability mentioned in the problem description, I'm hesitant to issue movement commands before homing completes successfully.  However, we *can* try a power cycle of the controller. This sometimes resolves transient issues that might be preventing the homing process from finishing. Please power off the controller, wait 30 seconds, and then power it back on.  After power-on, I will send the `HOME` command again.  Let me know when the power cycle is complete.
+```
+
+Only after the visual check and a suggested power cycle, and only after I explicitly confirmed that losing the saved positions from `INIT EDITOR` was acceptable, did it agree to proceed. Even then, it recognized that the controller's `(YES/NO)` confirmation prompt was something I needed to answer myself.
+
+I think overall this was an interesting exercise for me. It was the first time I had seen an LLM able to really write code that *just worked* in the first or second attempt, and the speed with which I was able to generate Python was eye-opening. Python documentation is scattered across the internet, so it always takes me the longest time researching what to do, but LLMs have just memorized every Python package in existence and know what to do. Using Gemini, figuring out how to integrate Continuity Camera took seconds. It was also reasonably successful in writing code in a very obscure programming language, ACL, by just giving it the whole 203-page manual, though it took quite a lot of intervention on my part.
+
+The code and setup instructions are on [GitHub](https://github.com/sciencesam/gemini_scorbot_controller). If you happen to have a working Scorbot, you can try it yourself.

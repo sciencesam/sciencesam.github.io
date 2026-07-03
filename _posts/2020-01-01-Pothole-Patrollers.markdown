@@ -2,7 +2,7 @@
 layout: post
 title:  "Passive Pothole Patrollers"
 date:   2020-01-01 14:11:01 -0500
-tags: dsp ml automotive sensors paper
+tags: dsp ml automotive sensors paper robotics
 feature_img: /_img/pothole.PNG
 categories: news
 ---
