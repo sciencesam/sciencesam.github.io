@@ -39,6 +39,11 @@ include:
 show_excerpts: true
 excerpt_separator: <!-- excerpt-end -->
 
+# Pin the header nav to these pages only (new pages won't auto-appear)
+header_pages:
+  - about.markdown
+  - news.html
+
 permalink: /:categories/:title/
 
 # Exclude from processing.
