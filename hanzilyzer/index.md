@@ -9,7 +9,7 @@ permalink: /hanzilyzer/
 Hanzilyzer is an iOS app for understanding real Chinese: animated stroke
 order, per-character dictionary detail (pinyin, meaning, radicals,
 components, etymology), instant on-device translation, speech, and optional
-AI interpretations that explain what a message really means — tone, slang,
+AI interpretations that explain what a message really means: tone, slang,
 and all.
 
 ## Support

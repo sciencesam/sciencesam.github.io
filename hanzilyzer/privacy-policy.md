@@ -8,7 +8,7 @@ permalink: /hanzilyzer/privacy-policy
 
 *Effective date: July 2, 2026*
 
-Hanzilyzer is a Chinese dictionary and translation-help app. It is designed to work on your device and to collect as little as possible — we do not want your data.
+Hanzilyzer is a Chinese dictionary and translation-help app. It is designed to work on your device and to collect as little as possible, we do not want your data.
 
 ## What the app collects
 
