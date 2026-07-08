@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ad_hanzilyzer",
+    "file": "ad_hanzilyzer.mp4",
+    "username": "@Hanzilyzer",
+    "caption": "my other app teaches you Chinese characters. this one rots your brain. balance. #ad"
+  },
+  {
+    "id": "ad_premium_rot",
+    "file": "ad_premium_rot.mp4",
+    "username": "@WristRot",
+    "caption": "Premium Rot removes ads. $1.99. yes really. #ad"
+  },
+  {
+    "id": "ad_void",
+    "file": "ad_void.mp4",
+    "username": "@VOID_wraps",
+    "caption": "your watch is naked. fix that. VOID\u2122 precision-cut wrist skins. #ad"
+  },
+  {
+    "id": "ad_gravel",
+    "file": "ad_gravel.mp4",
+    "username": "@GravelWater",
+    "caption": "GRAVEL\u2122 water. it's water, with rocks near it. stay hydrated king. #sponsored"
+  },
+  {
+    "id": "ad_doomscroll_mutual",
+    "file": "ad_doomscroll_mutual.mp4",
+    "username": "@DoomscrollMutual",
+    "caption": "Doomscroll Mutual: insurance for when the feed ends. it never does. #ad"
+  },
+  {
+    "id": "ad_brainrot_univ",
+    "file": "ad_brainrot_univ.mp4",
+    "username": "@BRAINROT_UNIV",
+    "caption": "earn your degree in Media Studies (Wrist Track). apply nowhere. #sponsored"
+  },
+  {
+    "id": "ad_ieee",
+    "file": "ad_ieee.mp4",
+    "username": "@IEEE",
+    "caption": "join IEEE. the world's largest technical professional organization. ieee.org #ad"
+  }
+]
