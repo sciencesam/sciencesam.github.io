@@ -34,6 +34,13 @@
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
+          <div class="nav-dropdown">
+            <span class="page-link nav-dropdown-toggle" tabindex="0">Apps &#9662;</span>
+            <div class="nav-dropdown-menu">
+              <a class="page-link" href="{{ "/hanzilyzer/" | relative_url }}">Hanzilyzer</a>
+              <a class="page-link" href="{{ "/wristrot/" | relative_url }}">WristRot</a>
+            </div>
+          </div>
         </div>
       </nav>
     {%- endif -%}

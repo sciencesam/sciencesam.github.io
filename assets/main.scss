@@ -23,6 +23,69 @@
     }
 }
 
+.site-nav .nav-dropdown {
+    position: relative;
+    display: inline-block;
+
+    .nav-dropdown-toggle {
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+    }
+
+    .nav-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 8.5rem;
+        padding: 0.25rem 0;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 3px;
+        z-index: 10;
+
+        .page-link {
+            display: block;
+            padding: 0.3rem 1rem;
+            margin-left: 0;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &:hover .nav-dropdown-menu,
+    &:focus-within .nav-dropdown-menu {
+        display: block;
+    }
+}
+
+// In the collapsed hamburger menu, list the app links like the other pages
+@include media-query($on-palm) {
+    .site-nav .nav-dropdown {
+        display: block;
+
+        .nav-dropdown-toggle {
+            display: none;
+        }
+
+        .nav-dropdown-menu {
+            display: block;
+            position: static;
+            border: none;
+            padding: 0;
+
+            .page-link {
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
 .rect {
     border-top: 2px solid rgb(133, 133, 133);
     border-bottom: 2px solid rgb(133, 133, 133);
