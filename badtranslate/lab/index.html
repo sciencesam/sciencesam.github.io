@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+  Redirect stub for the BadTranslate Lab (GO-LIVE, workers.dev path).
+
+  Lives in the GitHub Pages repo at badtranslate/lab/index.html so it is
+  reachable at samstone.org/badtranslate/lab. It forwards to the Worker's lab,
+  keeping the ?code=... invite intact, so friends get a clean
+  samstone.org/badtranslate/lab link with no DNS work.
+
+  When the custom domain lands, delete this file (or point it at
+  contextlang-api.samstone.org).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BadTranslate Lab</title>
+<script>
+  // Keep the whole query string (?code=...) so the invite survives the hop.
+  location.replace("https://contextlang-proxy.samstone.workers.dev/lab" + location.search);
+</script>
+</head>
+<body style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;padding:24px">
+  Opening the lab&hellip; if nothing happens, ask for a fresh link.
+</body>
+</html>
