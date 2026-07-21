@@ -11,7 +11,7 @@ permalink: /wristrot/privacy/
 - Your likes and your Premium Rot purchase state are stored only on your
   watch (and your iCloud device backup, which we never see).
 - On launch, the app fetches a static list of ads and small video files
-  from this website (samstone.org). That request contains no identifiers —
+  from this website (samstone.org). That request contains no identifiers;
   it's the same as your browser loading this page. Standard web server
   logs (IP address, timestamp) may exist transiently at our hosting
   provider, as with any website; we don't use them for anything.
