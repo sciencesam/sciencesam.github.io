@@ -1,0 +1,37 @@
+/* Fallbacks for post content whose per-page layout CSS WordPress generated on the fly */
+.entry-content .wp-block-columns{display:flex;flex-wrap:wrap;gap:2em}
+.entry-content .wp-block-column{flex:1 1 0;min-width:220px}
+.entry-content img{max-width:100%;height:auto}
+.entry-content figure.wp-block-image img{margin-left:auto;margin-right:auto}
+.entry-content .wp-block-gallery.has-nested-images{display:flex;flex-wrap:wrap;gap:1em}
+.entry-content .wp-block-gallery.has-nested-images>figure{flex:1 1 calc(50% - 1em);margin:0}
+.entry-content .wp-block-gallery.columns-3>figure{flex-basis:calc(33.33% - 1em)}
+.entry-content .wp-block-gallery.columns-4>figure{flex-basis:calc(25% - 1em)}
+.entry-content .wp-block-gallery.has-nested-images>figure img{width:100%;aspect-ratio:1;object-fit:cover}
+.entry-content .wp-block-buttons{display:flex;flex-wrap:wrap;gap:.75em}
+.entry-content ul.wp-block-list,.entry-content ol.wp-block-list{padding-left:1.5em}
+.post-meta{text-align:center;margin:-40px 0 50px;font-size:15px;opacity:.8}
+.post-meta a{text-decoration:none}
+.post-tags{margin-top:50px;padding-top:20px;border-top:1px solid rgba(0,0,0,.08);font-size:14px}
+.post-tags a{display:inline-block;margin:0 10px 6px 0;text-decoration:none}
+.post-nav{display:flex;justify-content:space-between;gap:20px;margin-top:40px;font-size:15px}
+.post-nav a{max-width:48%;text-decoration:none}.post-nav a+a{text-align:right}
+.archive-grid{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.archive-grid{grid-template-columns:1fr}}
+.archive-grid li{margin:0}
+.archive-grid .wp-block-cover{border-radius:12px;overflow:hidden}
+.archive-grid .wp-block-cover h2{font-size:1.15rem;line-height:1.35;margin:.4em 0 0}
+.archive-grid .wp-block-cover h2 a{color:#fff;text-decoration:none}
+.archive-grid time{color:#fff;font-size:13px;opacity:.85}
+.archive-pagination{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:15px}
+.archive-pagination a{text-decoration:none}
+.footer-tools select{width:100%;margin-top:10px;padding:10px;border:1px solid rgba(255,255,255,.3);border-radius:0;background:transparent;color:inherit;font:inherit}
+.footer-tools select option{color:#222}
+.footer-tools #search{--pagefind-ui-scale:.8;--pagefind-ui-primary:currentColor;--pagefind-ui-text:currentColor;--pagefind-ui-background:transparent;--pagefind-ui-border:rgba(255,255,255,.3);--pagefind-ui-border-radius:0;--pagefind-ui-font:inherit;margin-bottom:12px}
+.footer-tools .pagefind-ui__result-link,.footer-tools .pagefind-ui__result-excerpt{color:inherit}
+.footer-tools .pagefind-ui__search-input{color:inherit}
+/* mobile menu overlay (replaces the WordPress interactivity script) */
+.wp-block-navigation__responsive-container.is-menu-open{display:flex}
+.post-body{max-width:880px;margin:0 auto}
+.basal-fse-inner-banner .wp-block-cover h1{text-shadow:0 1px 12px rgba(0,0,0,.35)}
